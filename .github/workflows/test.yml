@@ -41,5 +41,4 @@ jobs:
       - name: Upload Paperclip Jar
         uses: actions/upload-artifact@v4
         with:
-          name: paper-${{ fromJSON(steps.determine.outputs.result).pr }}
           path: paper-server/build/libs/paper-paperclip-*-mojmap.jar
