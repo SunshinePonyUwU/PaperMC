@@ -42,7 +42,7 @@ public final class CraftPlayerProfile implements PlayerProfile, com.destroystoky
         Preconditions.checkArgument(isValidSkullProfile, "The skull profile is missing a name or textures!");
         // Paper start - Validate
         Preconditions.checkArgument(gameProfile.getName().length() <= 16, "The name of the profile is longer than 16 characters");
-        Preconditions.checkArgument(net.minecraft.util.StringUtil.isValidPlayerName(gameProfile.getName()), "The name of the profile contains invalid characters: %s", gameProfile.getName());
+        // Preconditions.checkArgument(net.minecraft.util.StringUtil.isValidPlayerName(gameProfile.getName()), "The name of the profile contains invalid characters: %s", gameProfile.getName());
         final PropertyMap properties = gameProfile.getProperties();
         Preconditions.checkArgument(properties.size() <= 16, "The profile contains more than 16 properties");
         for (final Property property : properties.values()) {
@@ -79,7 +79,7 @@ public final class CraftPlayerProfile implements PlayerProfile, com.destroystoky
             Preconditions.checkArgument((uniqueId != null) || !StringUtils.isBlank(name), "uniqueId is null or name is blank");
         }
         Preconditions.checkArgument(name == null || name.length() <= 16, "The name of the profile is longer than 16 characters"); // Paper - Validate
-        Preconditions.checkArgument(name == null || net.minecraft.util.StringUtil.isValidPlayerName(name), "The name of the profile contains invalid characters: %s", name); // Paper - Validate
+        // Preconditions.checkArgument(name == null || net.minecraft.util.StringUtil.isValidPlayerName(name), "The name of the profile contains invalid characters: %s", name); // Paper - Validate
         this.uniqueId = uniqueId;
         this.name = name;
     }
